@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashfaq Haider portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="fevicon.png" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            background: #444444;
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .navbar {
+            background: #fff;
+            color: #232323;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 54px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 5px;
+            z-index: 99;
+            border-radius: 8px;
+            margin: 6px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: #232323;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: border 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            border-bottom: 2px solid #323232;
+        }
+        .container, .container2, .container3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            padding-bottom: 30px;
+        }
+        .container2, .container3 {
+            min-height: 80vh;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.7em;
+            letter-spacing: 1.5px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 16px;
+            color: #ccc;
+        }
+        .paragraph {
+            text-align: center;
+            max-width: 600px;
+            font-size: 1.1em;
+            line-height: 1.25em;
+            color: #ddd;
+            margin-bottom: 12px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 18px;
+        }
+        .view-work-btn {
+            padding: 10px 34px;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            font-size: 1em;
+            font-weight: 500;
+            border-radius: 3px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .view-work-btn:hover {
+            background: #fff;
+            color: #323232;
+        }
+        .card-list {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: transparent;
+            border: 2px solid #dedede;
+            border-radius: 10px;
+            width: 230px;
+            height: 170px;
+            color: #dedede;
+            text-align: center;
+            padding: 30px 10px 10px 10px;
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: 18px;
+            transition: border 0.2s, color 0.2s, background 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card:hover {
+            border: 2px solid #fff;
+            color: #fff;
+            background: #333;
+        }
+        .card i {
+            font-size: 4em;
+            margin-bottom: 12px;
+        }
+        .card label {
+            margin-top: 10px;
+            font-size: 1.05em;
+            display: block;
+            color: inherit;
+        }
+        .footer {
+            margin-top: 45px;
+            text-align: center;
+            color: #878787;
+            font-size: 1.05em;
+        }
+        .footer-icons {
+            margin-top: 10px;
+        }
+        .footer-icons a{
+            color: #878787;
+            margin: 0 10px;
+            font-size: 2em;
+            text-decoration: none;
+            vertical-align: middle;
+            transition: color 0.3s;
+        }
+        .footer-icons a:hover{
+            color: #0077b5;
+        }
+        .footer-icons a:nth-child(2):hover{
+            color: #333;
+        }
+        .footer-icons a:nth-child(3):hover{
+            color: #e1306c;
+        }
+        .message-section{
+            margin: 40px auto 0 auto;
+            background: #393939;
+            padding: 28px 24px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 2px 12px #2223;
+        }
+        .message-section h3{
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .message-section form{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .message-section input, .message-section textarea{
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            background: #222;
+            color: #fff;
+        }
+        .message-section textarea {
+            min-height: 70px;
+        }
+        .message-section button{
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #0077b5;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .message-section button:hover{
+            background-color: #005f87;
+        }
+        @media (max-width: 900px) {
+            .card-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 80vw;
+                margin-bottom: 22px;
+            }
+        }
+        P{
+            color: #bfbfbf;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home" class="active">HOME</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <section id="home">
+    <div class="container">
+        <div class="main">
+            <div class="title">Ashfaq Haider</div>
+            <div class="subtitle">Beginner/ Student</div>
+            <div class="paragraph">A passionate web developer skilled in C programming and HTML/CSS.
+                Aspiring to create engaging and user-friendly web experiences.</div>
+            <div class="button-group">
+                <button class="view-work-btn" onclick="location.href='#projects'">VIEW WORK</button>
+                <button class="view-work-btn" onclick="location.href='#contact'">CONTACT</button>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section>
+    <div class="container2">
+        <div class="main">
+            <div class="title">Welcome to My Portfolio</div>
+            <div class="subtitle">Discover My Projects and Skills</div>
+            <div class="paragraph">Explore a collection of my work, showcasing my journey as a web developer.
+                From simple web pages to interactive applications, see how I bring ideas to life through code.</div>
+        </div>        
+    </div>
+    </section>
+
+    <section id="skills">
+    <div class="container2">
+        <div class="title">Skills & Technologies</div>
+        <div class="subtitle">What I Bring to the Table</div>
+        <div class="card-list">
+            <div class="card">
+                <i class="fa-brands fa-html5 fa-6x"></i>
+                <label>HTML5</label>
+            </div>
+            <div class="card">
+                <i class="fa-brands fa-css3-alt fa-6x"></i>
+                <label>CSS3</label>
+            </div>
+            <div class="card">
+                <i class="fa-brands fa-python fa-6x"></i>
+                <label>Python</label>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-code fa-6x"></i>
+                <label>C language</label>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="projects">
+        <div class="container2">
+        <div class="title">My Projects</div>
+        <div class="subtitle">A Glimpse into My Work</div>
+        <div class="card-list">
+            <div class="card">
+                <i class="fa-solid fa-calculator fa-6x"></i>
+                <label>Simple Calculator</label>
+                <p>A Simple calculator made in python.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-gamepad fa-6x"></i>                 
+                <label>Tic Tac Toe Game</label>
+                <p>A Tic Tac Toe Game made in python.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-laptop-code fa-6x"></i>
+                <label>Portfolio Website</label>
+                <P>This is a Portfolio Website made usingg HTML and CSS.</P>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="contact">
+    <div class="container3">
+        <div class="title">Contact Me</div>
+        <div class="subtitle">Let's Connect!</div>
+        <div class="paragraph">Interested in collaborating or have any questions?
+            Feel free to reach out to me via email or connect with me on social media.
+            I'm always open to discussing new projects and opportunities.</div>
+    <div class="message-section">
+        <h3>Send a Message</h3>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div class="footer" style="margin-top:50px;">
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/ashfaq-haider-80305a399/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/ashfaqhaider216-stack?tab=overview&from=2025-11-01&to=2025-11-15" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.instagram.com/ashfaq.216?igsh=Nm1qNnMzZWZlY2Z1" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+        <br>
+        &copy; 2025 Ashfaq Haider. ALL RIGHTS RESERVED. 
+    </div>
+    </div>
+    </section>
+
+    <script>
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sectionIds = ['home', 'skills', 'projects', 'contact'];
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sectionIds.forEach(id => {
+            const section = document.getElementById(id);
+            if (section) {
+                const sectionTop = section.offsetTop - 82;
+                if (window.scrollY >= sectionTop) {
+                    current = id;
+                }
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+    </script>
+</body>
+</html>
